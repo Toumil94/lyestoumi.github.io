@@ -1,6 +1,4 @@
-# lyestoumi.github.io
 
-<!DOCTYPE html>
 <html lang="fr" data-lang="fr">
 <head>
 <meta charset="UTF-8">
