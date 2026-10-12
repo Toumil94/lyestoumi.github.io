@@ -473,12 +473,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <p data-en="Built end to end on my own time, and published as open source on GitHub.">Construits de bout en bout sur mon temps libre, et publiés en open source sur GitHub.</p>
     </div>
     <div class="projects">
-      <article class="proj soon">
-        <span class="state" data-en="In progress">En construction</span>
+      <article class="proj live">
+        <span class="state" data-en="Live, updated daily">En ligne, mis à jour chaque jour</span>
         <h3 data-en="Swiss rail punctuality dashboard">Dashboard ponctualité CFF</h3>
-        <p data-en="Millions of real train arrivals from Swiss open data, modelled in SQL and turned into a public dashboard: which lines, stations and hours are late, and why.">Des millions d'arrivées réelles de trains issues de l'open data suisse, modélisées en SQL et transformées en dashboard public : quelles lignes, quelles gares et quelles heures sont en retard, et pourquoi.</p>
-        <div class="stack"><span>SQL</span><span>dbt</span><span>DuckDB</span><span>GitHub Actions</span><span>Power BI</span></div>
-        <a href="https://github.com/Toumil94" target="_blank" rel="noopener" data-en="Follow on GitHub">Suivre sur GitHub</a>
+        <p data-en="3 million real train arrivals from Swiss open data, modelled in SQL with dbt and turned into a public dashboard. A GitHub Actions pipeline refreshes it every morning, with 30 data quality tests.">3 millions d'arrivées réelles de trains issues de l'open data suisse, modélisées en SQL avec dbt et transformées en dashboard public. Un pipeline GitHub Actions le rafraîchit chaque matin, avec 30 tests de qualité.</p>
+        <div class="stack"><span>SQL</span><span>dbt</span><span>DuckDB</span><span>GitHub Actions</span><span>Data viz</span></div>
+        <p style="display:flex;gap:16px;flex-wrap:wrap;flex:0"><a href="https://cff-ponctualite.netlify.app" target="_blank" rel="noopener" data-en="Open the dashboard">Ouvrir le dashboard</a><a href="https://github.com/Toumil94/cff-ponctualite" target="_blank" rel="noopener" data-en="See the code">Voir le code</a></p>
       </article>
       <article class="proj live">
         <span class="state" data-en="Deployed">Déployé</span>
@@ -620,8 +620,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
           en:{n:'Bangkok',s:'AI mission',h:'AI mission in Bangkok',w:'With the teams in Thailand and the Philippines',p:'Put the internal RAG chatbot into production, first with a 12-person pilot team, then the whole support team. Result: 30% less time spent searching for information.'},en_y:'Asia'},
     {y:'2025',fr:{n:'Diplômé',s:'Grade de Master',h:'Ingénieur diplômé',w:'CESI, titre habilité CTI',p:'Titre d\'ingénieur en informatique conférant le grade de Master, délivré le 12 décembre 2025.'},
           en:{n:'Graduated',s:'Master\'s level',h:'Graduate engineer',w:'CESI, CTI-accredited degree',p:'Engineering degree in computer science conferring a Master\'s-level degree, issued on 12 December 2025.'}},
-    {y:'2026',fr:{n:'Genève',s:'Permis B',h:'Installé à Genève',w:'Résident, permis de travail B',p:'Installation à Genève et montée en compétences en continu.',l:['Azure Data Fundamentals (DP-900)','Trois accréditations Databricks','Projets open source data et IA']},
-          en:{n:'Geneva',s:'B permit',h:'Settled in Geneva',w:'Resident, B work permit',p:'Moved to Geneva and kept building skills.',l:['Azure Data Fundamentals (DP-900)','Three Databricks accreditations','Open-source data and AI projects']}},
+    {y:'2026',fr:{n:'Genève',s:'Permis B',h:'Installé à Genève',w:'Résident, permis de travail B',p:'Installation à Genève et montée en compétences en continu.',l:['Azure Data Fundamentals (DP-900)','Trois accréditations Databricks','Dashboard ponctualité CFF en ligne']},
+          en:{n:'Geneva',s:'B permit',h:'Settled in Geneva',w:'Resident, B work permit',p:'Moved to Geneva and kept building skills.',l:['Azure Data Fundamentals (DP-900)','Three Databricks accreditations','Live Swiss rail punctuality dashboard']}},
     {y:'?',next:true,fr:{n:'Votre équipe',s:'Prochain arrêt',h:'Prochain arrêt : votre équipe',w:'Genève et Suisse romande, disponible immédiatement',p:'Data Engineer, AI Engineer, BI ou Business Analyst data. Si votre équipe a besoin de quelqu\'un qui sait construire le pipeline, le tableau de bord et l\'assistant IA, parlons-en.',cta:'Me contacter'},
           en:{n:'Your team',s:'Next stop',h:'Next stop: your team',w:'Geneva and Romandy, available immediately',p:'Data Engineer, AI Engineer, BI or data Business Analyst. If your team needs someone who can build the pipeline, the dashboard and the AI assistant, let\'s talk.',cta:'Get in touch'}}
   ];
