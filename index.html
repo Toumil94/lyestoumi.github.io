@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Lyes Toumi | Data & AI Engineer à Genève</title>
-<meta name="description" content="Lyes Toumi, ingénieur Data & IA résident à Genève (permis B). Pipelines Databricks/Azure, Power BI, assistants IA RAG en production. Disponible immédiatement.">
+<meta name="description" content="Lyes Toumi, ingénieur Data & IA diplômé CESI (grade de Master), résident à Genève avec permis B. Pipelines Databricks/Azure, Power BI, assistants IA RAG en production. Disponible immédiatement.">
 <meta property="og:title" content="Lyes Toumi | Data & AI Engineer à Genève">
 <meta property="og:description" content="Ingénieur Data & IA, résident à Genève avec permis B. Disponible immédiatement.">
 <meta property="og:image" content="assets/lyes-toumi.jpg">
@@ -17,115 +17,164 @@
 :root{
   --paper:#F3F4F1;
   --ink:#16191D;
-  --slate:#5A636E;
+  --slate:#59626D;
   --rule:#D6D9D3;
   --red:#D52B1E;
   --board:#1C2431;
+  --tile:#323E52;
   --board-ink:#F1F1E8;
   --board-dim:#8D97A6;
+  --amber:#FFD84D;
   --white:#FFFFFF;
   --gut:clamp(16px,4vw,56px);
   --max:1240px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{background:var(--paper);color:var(--ink);font-family:'Archivo',system-ui,sans-serif;font-variation-settings:'wdth' 100;font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{background:var(--paper);color:var(--ink);font-family:'Archivo',system-ui,sans-serif;font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:inherit}
 img{display:block;max-width:100%}
+button{font:inherit;color:inherit}
 :focus-visible{outline:3px solid var(--red);outline-offset:3px}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gut)}
 
 /* ---------- nav ---------- */
-.nav{position:sticky;top:0;z-index:20;background:rgba(243,244,241,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--rule)}
+.nav{position:sticky;top:0;z-index:20;background:rgba(243,244,241,.93);backdrop-filter:blur(10px);border-bottom:1px solid var(--rule)}
 .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px}
-.mark{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;font-size:16px}
+.mark{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;font-size:16px;cursor:pointer}
 .mark i{width:22px;height:22px;background:var(--red);position:relative;flex:none}
 .mark i::before,.mark i::after{content:"";position:absolute;background:#fff}
 .mark i::before{left:9px;top:4px;width:4px;height:14px}
 .mark i::after{left:4px;top:9px;width:14px;height:4px}
-.links{display:flex;gap:28px;font-size:15px}
+.links{display:flex;gap:26px;font-size:15px}
 .links a{text-decoration:none;color:var(--slate)}
 .links a:hover{color:var(--ink)}
 .lang{display:flex;border:1px solid var(--ink)}
-.lang button{font:inherit;font-size:13px;font-weight:600;background:none;border:0;padding:5px 10px;cursor:pointer;color:var(--ink)}
+.lang button{font-size:13px;font-weight:600;background:none;border:0;padding:5px 10px;cursor:pointer}
 .lang button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
 
+/* ---------- type ---------- */
+h1{font-stretch:118%;font-weight:850;font-size:clamp(60px,11vw,150px);line-height:.92;letter-spacing:-.035em}
+h1 span{display:block}
+h2.t{font-stretch:112%;font-weight:800;font-size:clamp(34px,4.6vw,56px);line-height:1.04;letter-spacing:-.022em}
+.lede{font-size:clamp(19px,2vw,23px);line-height:1.45;max-width:32ch}
+
 /* ---------- hero ---------- */
-.hero{padding:clamp(40px,8vw,96px) 0 clamp(48px,7vw,88px);border-bottom:1px solid var(--ink)}
-.hero-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(28px,5vw,72px);align-items:end}
-.permit{display:inline-flex;align-items:stretch;margin-bottom:28px;border:2px solid var(--red);font-weight:600;font-size:15px}
+.hero{padding:clamp(40px,7vw,88px) 0 clamp(48px,6vw,80px)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:clamp(28px,5vw,72px);align-items:center}
+.permit{display:inline-flex;align-items:stretch;margin-bottom:26px;border:2px solid var(--red);font-weight:600;font-size:15px;background:var(--white)}
 .permit b{background:var(--red);color:#fff;padding:6px 12px;font-size:18px;font-weight:800;display:flex;align-items:center}
 .permit span{padding:6px 14px;display:flex;align-items:center}
-h1{font-variation-settings:'wdth' 118;font-weight:850;font-size:clamp(56px,11vw,148px);line-height:.86;letter-spacing:-.035em;margin-bottom:28px}
-h1 span{display:block}
-.lede{font-size:clamp(19px,2vw,23px);line-height:1.45;max-width:30ch;color:var(--ink);margin-bottom:32px}
+.hero h1{margin-bottom:26px}
+.hero .lede{margin-bottom:30px}
 .cta{display:flex;flex-wrap:wrap;gap:12px}
-.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;font-weight:650;font-size:16px;text-decoration:none;border:2px solid var(--ink);transition:background .15s,color .15s}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;font-weight:650;font-size:16px;text-decoration:none;border:2px solid var(--ink);background:none;cursor:pointer;transition:background .15s,color .15s,border-color .15s}
 .btn-solid{background:var(--ink);color:var(--paper)}
 .btn-solid:hover{background:var(--red);border-color:var(--red)}
 .btn-line:hover{background:var(--ink);color:var(--paper)}
 
-.side{display:flex;flex-direction:column;gap:20px}
-.portrait{display:flex;gap:16px;align-items:flex-end}
-.portrait img{width:132px;height:132px;object-fit:cover;filter:grayscale(.15) contrast(1.03)}
-.portrait p{font-size:15px;color:var(--slate);line-height:1.45}
-.portrait p strong{color:var(--ink);display:block;font-size:17px}
-
-/* departure board */
-.board{background:var(--board);color:var(--board-ink);padding:18px 18px 14px;font-variation-settings:'wdth' 75}
-.board-head{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid #334055;padding-bottom:10px;margin-bottom:6px}
-.board-head h2{font-size:19px;font-weight:700;letter-spacing:.01em}
-.clock{font-size:22px;font-weight:700;font-variant-numeric:tabular-nums;color:#FFD84D}
-.board table{width:100%;border-collapse:collapse}
-.board th{font-weight:500;font-size:12px;color:var(--board-dim);text-align:left;padding:6px 0 4px}
-.board td{font-size:18px;font-weight:650;padding:7px 0;border-top:1px solid #2A3446;white-space:nowrap}
-.board td:first-child{width:100%;padding-right:12px;white-space:normal}
-.board td.track{padding-right:14px;color:var(--board-ink)}
-.board td.ok{color:#FFD84D;text-align:right}
-.flip{display:inline-block;min-width:.55em}
-.board-foot{font-size:13px;color:var(--board-dim);padding-top:10px;border-top:1px solid #334055;margin-top:4px}
+/* departure board with split-flap tiles */
+.board{background:var(--board);color:var(--board-ink);padding:20px 20px 16px;box-shadow:0 1px 0 #0a0e14,0 24px 48px -28px rgba(22,25,29,.55)}
+.board-top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:14px}
+.board-top h2{font-stretch:80%;font-size:20px;font-weight:700}
+.board-top .who{display:flex;align-items:center;gap:12px}
+.board-top img{width:46px;height:46px;object-fit:cover;border:2px solid var(--board-ink)}
+.clock{font-stretch:80%;font-size:26px;font-weight:700;font-variant-numeric:tabular-nums;color:var(--amber)}
+.rows{display:flex;flex-direction:column;gap:8px}
+.row{display:grid;grid-template-columns:56px minmax(0,1fr) auto;gap:12px;align-items:center;padding-top:8px;border-top:1px solid #2E3A4D}
+.row .time{font-stretch:80%;font-weight:700;font-size:17px;color:var(--amber);font-variant-numeric:tabular-nums}
+.row .st{font-stretch:80%;font-weight:650;font-size:14px;color:var(--amber);text-align:right}
+.flaps{display:flex;flex-wrap:nowrap;gap:2px;overflow:hidden}
+.flap{flex:none;display:inline-flex;align-items:center;justify-content:center;width:.92em;height:1.42em;background:var(--tile);color:var(--board-ink);font-stretch:80%;font-weight:700;font-size:clamp(14px,1.45vw,18px);position:relative;border-radius:2px}
+.flap::after{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:#121820}
+.flap.sp{background:transparent;width:.4em}
+.flap.sp::after{display:none}
+.flap.turn{animation:turn .07s linear}
+@keyframes turn{0%{transform:scaleY(1)}50%{transform:scaleY(.2)}100%{transform:scaleY(1)}}
+.board-foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:13px;color:var(--board-dim);padding-top:12px;margin-top:12px;border-top:1px solid #2E3A4D}
 
 /* ---------- sections ---------- */
-section{padding:clamp(56px,8vw,104px) 0;border-bottom:1px solid var(--rule)}
-.sec-head{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(20px,4vw,56px);margin-bottom:clamp(32px,5vw,56px)}
-h2.t{font-variation-settings:'wdth' 112;font-weight:800;font-size:clamp(34px,5vw,58px);line-height:.95;letter-spacing:-.025em}
-.sec-head p{font-size:19px;color:var(--slate);max-width:52ch;align-self:end}
+section{padding:clamp(56px,8vw,104px) 0;border-top:1px solid var(--rule)}
+.sec-head{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(20px,4vw,56px);margin-bottom:clamp(32px,5vw,56px);align-items:end}
+.sec-head p{font-size:19px;color:var(--slate);max-width:52ch}
+
+/* ---------- route line ---------- */
+.line{position:relative;display:grid;grid-template-columns:repeat(7,minmax(0,1fr));margin:8px 0 0}
+.line::before{content:"";position:absolute;left:calc(100%/14);right:calc(100%/14);top:23px;height:8px;background:var(--ink)}
+.line::after{content:"";position:absolute;right:calc(100%/14);width:calc(100%/7);top:23px;height:8px;background:repeating-linear-gradient(90deg,var(--red) 0 14px,transparent 14px 22px)}
+.stop{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;background:none;border:0;cursor:pointer;padding:0 4px 8px}
+.stop .dot{width:54px;height:54px;border-radius:50%;background:var(--paper);border:6px solid var(--ink);display:flex;align-items:center;justify-content:center;font-stretch:80%;font-weight:800;font-size:14px;transition:background .15s,color .15s,transform .15s}
+.stop:hover .dot{transform:scale(1.06)}
+.stop[aria-selected="true"] .dot{background:var(--ink);color:var(--paper)}
+.stop.next .dot{border-color:var(--red);color:var(--red)}
+.stop.next[aria-selected="true"] .dot{background:var(--red);color:#fff}
+.stop b,.stop small{display:block}
+.stop b{font-size:17px;font-weight:700;line-height:1.2}
+.stop small{font-size:14px;color:var(--slate);line-height:1.3}
+.panel{margin-top:28px;background:var(--white);border-left:6px solid var(--ink);padding:26px 28px;display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(18px,4vw,48px);min-height:170px}
+.panel.next{border-left-color:var(--red)}
+.panel h3{font-stretch:108%;font-size:26px;font-weight:800;line-height:1.12;margin-bottom:6px}
+.panel .where{color:var(--slate);font-size:15px}
+.panel p{max-width:62ch}
+.panel ul{margin-top:10px;padding-left:18px;color:var(--ink)}
+.panel li{margin:4px 0}
 
 /* impact */
 .impact{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:2px solid var(--ink)}
-.impact div{padding:22px 22px 26px 0;border-right:1px solid var(--rule)}
-.impact div+div{padding-left:22px}
+.impact div{padding:22px 20px 26px 0;border-right:1px solid var(--rule)}
+.impact div+div{padding-left:20px}
 .impact div:last-child{border-right:0}
-.impact strong{display:block;font-variation-settings:'wdth' 118;font-weight:850;font-size:clamp(42px,5vw,64px);line-height:1;letter-spacing:-.03em;margin-bottom:10px}
+.impact strong{display:block;font-stretch:118%;font-weight:850;font-size:clamp(42px,5vw,64px);line-height:1.05;letter-spacing:-.03em;margin-bottom:10px}
 .impact div:first-child strong{color:var(--red)}
 .impact span{color:var(--slate);font-size:16px;display:block;max-width:28ch}
 
-/* experience */
-.job{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(20px,4vw,56px);padding-top:36px}
-.job-meta h3{font-size:26px;font-weight:750;line-height:1.15;margin-bottom:6px}
+.job{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(20px,4vw,56px);padding-top:40px}
+.job-meta h3{font-size:26px;font-weight:750;line-height:1.2;margin-bottom:6px}
 .job-meta p{color:var(--slate);font-size:15px}
 .roles{list-style:none}
 .roles li{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:24px;padding:20px 0;border-top:1px solid var(--rule)}
 .roles li:first-child{border-top:2px solid var(--ink)}
-.roles h4{font-size:19px;font-weight:700;line-height:1.25}
-.roles p{color:var(--ink)}
+.roles h4{font-size:19px;font-weight:700;line-height:1.3}
 .roles small{display:block;color:var(--slate);font-size:14px;margin-top:8px}
 .now{margin-top:40px;padding:22px 24px;background:var(--white);border-left:4px solid var(--red);display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(20px,4vw,56px)}
 .now h3{font-size:19px;font-weight:700}
-.now p{color:var(--ink)}
+
+/* ---------- engineering school ---------- */
+.school{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(24px,5vw,64px);align-items:start}
+.diploma{background:var(--white);padding:14px;border:1px solid var(--rule);cursor:zoom-in;display:block;width:100%;text-align:left}
+.diploma img{width:100%;aspect-ratio:1.47;object-fit:cover}
+.diploma span{display:block;font-size:14px;color:var(--slate);padding-top:10px}
+.facts{list-style:none;margin-top:22px;border-top:2px solid var(--ink)}
+.facts li{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--rule);font-size:16px}
+.facts li span{color:var(--slate)}
+.facts li b{font-weight:650;text-align:right}
+.method h3{font-stretch:108%;font-size:28px;font-weight:800;line-height:1.15;margin-bottom:12px}
+.method>p{font-size:18px;max-width:58ch;margin-bottom:28px}
+.cycle{list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin-bottom:36px;counter-reset:c}
+.cycle li{padding:14px 14px 14px 0;border-top:6px solid var(--ink);counter-increment:c}
+.cycle li+li{padding-left:14px;border-left:1px solid var(--rule)}
+.cycle li::before{content:counter(c);display:block;font-stretch:118%;font-weight:850;font-size:30px;line-height:1;margin-bottom:6px;color:var(--red)}
+.cycle b{display:block;font-size:16px;font-weight:700}
+.cycle span{font-size:14px;color:var(--slate);line-height:1.4;display:block;margin-top:4px}
+.school-projects{list-style:none}
+.school-projects li{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:20px;padding:18px 0;border-top:1px solid var(--rule)}
+.school-projects li:first-child{border-top:2px solid var(--ink)}
+.school-projects h4{font-size:18px;font-weight:700;line-height:1.3}
+.school-projects small{display:block;color:var(--slate);font-size:14px;margin-top:6px}
 
 /* projects */
-.projects{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
-.proj{background:var(--white);padding:26px 24px 24px;display:flex;flex-direction:column;gap:14px;border-top:4px solid var(--ink)}
+.projects{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.proj{background:var(--white);padding:24px 22px 22px;display:flex;flex-direction:column;gap:12px;border-top:4px solid var(--ink)}
 .proj.live{border-top-color:var(--red)}
+.proj.soon{background:transparent;border:2px dashed var(--red);border-top-width:4px;border-top-style:solid}
 .state{font-size:14px;font-weight:600;color:var(--slate);display:flex;align-items:center;gap:8px}
 .state::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--slate)}
-.live .state{color:var(--red)}
-.live .state::before{background:var(--red)}
-.proj h3{font-size:23px;font-weight:750;line-height:1.15}
-.proj p{color:var(--ink);flex:1}
+.live .state,.soon .state{color:var(--red)}
+.live .state::before,.soon .state::before{background:var(--red)}
+.proj h3{font-size:22px;font-weight:750;line-height:1.2}
+.proj p{flex:1}
 .stack{display:flex;flex-wrap:wrap;gap:6px}
-.stack span{font-size:13px;font-weight:550;padding:3px 9px;border:1px solid var(--rule);color:var(--slate)}
+.stack span{font-size:13px;font-weight:550;padding:3px 9px;border:1px solid var(--rule);color:var(--slate);background:var(--paper)}
 .proj a{font-weight:650;font-size:15px}
 
 /* skills */
@@ -136,35 +185,40 @@ h2.t{font-variation-settings:'wdth' 112;font-weight:800;font-size:clamp(34px,5vw
 
 /* certs */
 .certs{list-style:none;border-top:2px solid var(--ink)}
-.certs li{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,3fr) minmax(0,2fr);gap:16px;padding:16px 0;border-bottom:1px solid var(--rule);align-items:baseline}
-.certs b{font-weight:650;font-size:18px}
+.certs li{display:grid;grid-template-columns:72px minmax(0,6fr) minmax(0,3fr) auto;gap:18px;padding:14px 0;border-bottom:1px solid var(--rule);align-items:center}
+.thumb{width:72px;height:50px;border:1px solid var(--rule);background:var(--white);padding:0;cursor:zoom-in;overflow:hidden}
+.thumb img{width:100%;height:100%;object-fit:cover}
+.nothumb{width:72px;height:50px;border:1px dashed var(--rule);display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--slate)}
+.certs b{font-weight:650;font-size:18px;line-height:1.3}
 .certs span{color:var(--slate);font-size:15px}
-.certs a{font-size:15px;font-weight:600;justify-self:end}
-.certs em{font-style:normal;color:var(--red);font-size:15px;justify-self:end}
+.certs .acts{display:flex;gap:16px;justify-self:end;font-size:15px;font-weight:600}
+.certs .acts button{background:none;border:0;text-decoration:underline;cursor:pointer;padding:0}
+.certs em{font-style:normal;color:var(--red)}
 
-/* education */
-.edu{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
-.edu div{padding-top:18px;border-top:2px solid var(--ink)}
-.edu h3{font-size:20px;font-weight:700;margin-bottom:4px}
-.edu p{color:var(--slate)}
+/* lightbox */
+dialog.lb{border:0;padding:0;background:transparent;max-width:min(1100px,94vw);max-height:92vh;margin:auto}
+dialog.lb::backdrop{background:rgba(22,25,29,.82)}
+.lb figure{background:var(--white);padding:14px}
+.lb img{max-height:calc(92vh - 90px);width:auto;margin:0 auto}
+.lb figcaption{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-top:12px;font-weight:600}
+.lb figcaption button{background:var(--ink);color:var(--paper);border:0;padding:8px 14px;cursor:pointer;font-weight:600}
+dialog.lb[open] figure{animation:pop .22s cubic-bezier(.3,1.3,.5,1)}
+@keyframes pop{from{transform:scale(.94);opacity:0}to{transform:none;opacity:1}}
 
 /* contact */
 .contact{background:var(--ink);color:var(--paper);border:0}
-.contact h2.t{color:var(--paper);font-size:clamp(44px,8vw,104px);margin-bottom:24px}
-.contact .lede{color:#C9CDD3;max-width:40ch}
+.contact h2.t{color:var(--paper);font-size:clamp(46px,8vw,104px);line-height:1;margin-bottom:24px}
+.contact .lede{color:#C9CDD3;max-width:40ch;margin-bottom:24px}
 .contact-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(28px,5vw,72px);align-items:end}
 .reach{list-style:none;border-top:1px solid #3A4048}
 .reach li{border-bottom:1px solid #3A4048}
 .reach a{display:flex;justify-content:space-between;gap:16px;padding:16px 0;text-decoration:none;font-size:18px;font-weight:600}
 .reach a span{color:#9AA1AB;font-weight:450;font-size:15px}
-.reach a:hover{color:#fff}
-.reach a:hover span{color:#FFD84D}
-.cvs{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
+.reach a:hover span{color:var(--amber)}
 .contact .btn{border-color:var(--paper);color:var(--paper)}
 .contact .btn-solid{background:var(--paper);color:var(--ink)}
 .contact .btn-solid:hover{background:var(--red);border-color:var(--red);color:#fff}
 .contact .btn-line:hover{background:var(--paper);color:var(--ink)}
-.where{margin-top:28px;color:#9AA1AB;font-size:15px}
 footer{background:var(--ink);color:#7D848E;font-size:14px;padding:20px 0 28px;border-top:1px solid #2A3038}
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
@@ -172,39 +226,53 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .toast.show{transform:translate(-50%,0);visibility:visible;transition:transform .35s cubic-bezier(.3,1.4,.5,1),visibility 0s}
 
 /* ---------- responsive ---------- */
-@media (max-width:960px){
+@media (max-width:1060px){
+  .hero-grid,.sec-head,.job,.now,.contact-grid,.school,.panel{grid-template-columns:1fr}
   .impact{grid-template-columns:1fr 1fr}
   .impact div:nth-child(2){border-right:0}
   .impact div:nth-child(3){padding-left:0}
   .impact div:nth-child(n+3){border-top:1px solid var(--rule)}
-  .hero-grid,.sec-head,.job,.now,.contact-grid{grid-template-columns:1fr}
-  .skills{grid-template-columns:1fr 1fr}
+  .projects,.skills{grid-template-columns:1fr 1fr}
+  .cycle{grid-template-columns:1fr 1fr}
+  .cycle li:nth-child(3){padding-left:0;border-left:0}
 }
-@media (max-width:680px){
-  body{font-size:16px}
+@media (max-width:760px){
   .links{display:none}
-  .projects,.skills,.edu{grid-template-columns:1fr}
-  .impact{grid-template-columns:1fr}
-  .impact div,.impact div+div{padding:18px 0;border-right:0;border-bottom:1px solid var(--rule)}
-  .roles li{grid-template-columns:1fr;gap:6px}
-  .certs li{grid-template-columns:1fr auto}
-  .certs li span{grid-column:1}
-  .certs li a,.certs li em{grid-row:1;grid-column:2}
-  .board td{font-size:16px}
-  .portrait img{width:104px;height:104px}
+  .line{grid-template-columns:1fr;gap:0}
+  .line::before{left:24px;right:auto;top:27px;bottom:96px;width:8px;height:auto}
+  .line::after{left:24px;right:auto;top:auto;bottom:40px;height:56px;width:8px;background:repeating-linear-gradient(180deg,var(--red) 0 12px,transparent 12px 20px)}
+  .stop{flex-direction:row;text-align:left;align-items:center;gap:16px;padding:6px 0}
+  .stop .dot{flex:none}
+  .stop b,.stop small{display:block}
 }
-@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+@media (max-width:640px){
+  body{font-size:16px}
+  .projects,.skills,.cycle{grid-template-columns:1fr}
+  .cycle li,.cycle li+li{padding-left:0;border-left:0}
+  .impact{grid-template-columns:1fr}
+  .impact div,.impact div+div,.impact div:nth-child(3){padding:18px 0;border-right:0;border-top:0;border-bottom:1px solid var(--rule)}
+  .roles li,.school-projects li{grid-template-columns:1fr;gap:6px}
+  .certs li{grid-template-columns:60px minmax(0,1fr);row-gap:6px}
+  .thumb,.nothumb{width:60px;height:44px;grid-row:span 2}
+  .certs li>span{grid-column:2}
+  .certs .acts{grid-column:2;justify-self:start}
+  .row{grid-template-columns:44px minmax(0,1fr)}
+  .row .st{display:none}
+  .flap{font-size:12.5px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
 
 <header class="nav">
   <div class="wrap">
-    <a class="mark" href="#top"><i aria-hidden="true"></i>Lyes Toumi</a>
+    <a class="mark" href="#top" id="mark"><i aria-hidden="true"></i>Lyes Toumi</a>
     <nav class="links" aria-label="Sections">
+      <a href="#parcours" data-en="Journey">Parcours</a>
       <a href="#experience" data-en="Experience">Expérience</a>
+      <a href="#ecole" data-en="Engineering degree">Diplôme</a>
       <a href="#projets" data-en="Projects">Projets</a>
-      <a href="#competences" data-en="Skills">Compétences</a>
       <a href="#contact">Contact</a>
     </nav>
     <div class="lang" role="group" aria-label="Langue">
@@ -220,37 +288,34 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <div>
       <div class="permit"><b>B</b><span data-en="Geneva resident, work permit B">Résident à Genève, permis B</span></div>
       <h1><span>Lyes</span><span>Toumi</span></h1>
-      <p class="lede" data-en="Data &amp; AI engineer. I build the pipelines, dashboards and AI assistants that teams actually use every day.">Ingénieur Data &amp; IA. Je construis les pipelines, les tableaux de bord et les assistants IA que les équipes utilisent vraiment au quotidien.</p>
+      <p class="lede" data-en="Data &amp; AI engineer with a Master's-level engineering degree. I build the pipelines, dashboards and AI assistants that teams actually use every day.">Ingénieur Data &amp; IA, diplômé avec le grade de Master. Je construis les pipelines, les tableaux de bord et les assistants IA que les équipes utilisent vraiment au quotidien.</p>
       <div class="cta">
         <a class="btn btn-solid" href="#contact" data-en="Get in touch">Me contacter</a>
         <a class="btn btn-line" href="cv/CV_Lyes_Toumi_General_FR.pdf" data-cv download data-en="Download my CV">Télécharger mon CV</a>
       </div>
     </div>
 
-    <div class="side">
-      <div class="portrait">
-        <img src="assets/lyes-toumi.jpg" alt="Portrait de Lyes Toumi" width="132" height="132">
-        <p><strong>Data, Analytics &amp; AI Engineer</strong><span data-en="CESI engineering degree, 3 years at EssilorLuxottica">Diplômé ingénieur CESI, 3 ans chez EssilorLuxottica</span></p>
+    <div class="board" aria-label="Postes recherchés">
+      <div class="board-top">
+        <div class="who"><img src="assets/lyes-toumi.jpg" alt="Portrait de Lyes Toumi" width="46" height="46"><h2 data-en="Departures Geneva">Départs Genève</h2></div>
+        <span class="clock" id="clock">--:--</span>
       </div>
-      <div class="board" aria-label="Postes recherchés">
-        <div class="board-head">
-          <h2 data-en="Departures Geneva">Départs Genève</h2>
-          <span class="clock" id="clock">--:--</span>
-        </div>
-        <table>
-          <thead><tr><th data-en="Destination">Destination</th><th data-en="Area">Zone</th><th data-en="Status">Statut</th></tr></thead>
-          <tbody>
-            <tr><td><span class="fl">Data Engineer</span></td><td class="track"><span class="fl">GE / VD</span></td><td class="ok"><span class="fl" data-en="Ready">Prêt</span></td></tr>
-            <tr><td><span class="fl">AI / ML Engineer</span></td><td class="track"><span class="fl">GE / VD</span></td><td class="ok"><span class="fl" data-en="Ready">Prêt</span></td></tr>
-            <tr><td><span class="fl">BI &amp; Analytics</span></td><td class="track"><span class="fl">GE / VD</span></td><td class="ok"><span class="fl" data-en="Ready">Prêt</span></td></tr>
-            <tr><td><span class="fl">Business Analyst Data</span></td><td class="track"><span class="fl">GE / VD</span></td><td class="ok"><span class="fl" data-en="Ready">Prêt</span></td></tr>
-          </tbody>
-        </table>
-        <p class="board-foot" data-en="Available immediately. French native, English C1.">Disponible immédiatement. Français natif, anglais C1.</p>
-      </div>
+      <div class="rows" id="rows"></div>
+      <div class="board-foot"><span data-en="Available immediately">Disponible immédiatement</span><span data-en="FR native, EN C1">FR natif, EN C1</span></div>
     </div>
   </div>
 </div>
+
+<section id="parcours">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="t" data-en="Line Lyes Toumi">Ligne Lyes Toumi</h2>
+      <p data-en="From maths in Nice to data in Geneva. Pick a stop to see what happened there.">Des maths à Nice jusqu'à la data à Genève. Choisissez un arrêt pour voir ce qui s'y est passé.</p>
+    </div>
+    <div class="line" role="tablist" aria-label="Parcours" id="line"></div>
+    <div class="panel" id="panel" role="tabpanel" aria-live="polite"></div>
+  </div>
+</section>
 
 <section id="experience">
   <div class="wrap">
@@ -269,7 +334,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <div class="job">
       <div class="job-meta">
         <h3>EssilorLuxottica</h3>
-        <p data-en="Créteil (France) and Bangkok<br>Oct. 2022 to Oct. 2025">Créteil et Bangkok<br>Oct. 2022 à oct. 2025</p>
+        <p data-en="Créteil (France) and Bangkok<br>Oct. 2022 to Oct. 2025<br>Data Engineer, Data Analyst, BI Business Analyst">Créteil et Bangkok<br>Oct. 2022 à oct. 2025<br>Data Engineer, Data Analyst, Business Analyst BI</p>
       </div>
       <ul class="roles">
         <li>
@@ -277,7 +342,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
           <p data-en="Deployed and administered the Databricks (Azure) platform processing multi-source data (ERP, sales, inventory, logistics) for 3 regions. ETL pipelines in Python, SQL and PySpark orchestrated with Azure Data Factory and Delta Lake, integrated with Git and CI/CD.<small>Databricks, Azure, ADF, Delta Lake, PySpark, CI/CD</small>">Déploiement et administration de la plateforme Databricks (Azure) traitant des données multi-sources (ERP, ventes, stocks, logistique) pour 3 régions. Pipelines ETL en Python, SQL et PySpark orchestrés avec Azure Data Factory et Delta Lake, intégrés avec Git et CI/CD.<small>Databricks, Azure, ADF, Delta Lake, PySpark, CI/CD</small></p>
         </li>
         <li>
-          <h4 data-en="Analytics &amp; BI">Analytics &amp; BI</h4>
+          <h4>Analytics &amp; BI</h4>
           <p data-en="30 to 40 dashboards on Power BI, SAP BO, Qlik and Databricks covering inventory, sales and supply chain. Star and snowflake modelling, SAP BO semantic universes, DAX measures and group KPIs (WW Service KPI, Forecast, S&amp;OP). Response time of 9.2 s on 92% of queries and availability above 99%.<small>Power BI, DAX, SAP BO, Qlik, dimensional modelling</small>">30 à 40 tableaux de bord sur Power BI, SAP BO, Qlik et Databricks, couvrant stocks, ventes et supply chain. Modélisation en étoile et en flocon, univers sémantiques SAP BO, mesures DAX et KPI groupe (WW Service KPI, Forecast, S&amp;OP). Temps de réponse de 9,2 s sur 92% des requêtes et disponibilité supérieure à 99%.<small>Power BI, DAX, SAP BO, Qlik, modélisation dimensionnelle</small></p>
         </li>
         <li>
@@ -293,7 +358,47 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
     <div class="now">
       <h3 data-en="Since late 2025">Depuis fin 2025</h3>
-      <p data-en="Settled in Geneva with a B permit. Earned the Azure DP-900 and three Databricks accreditations, and I build the data and AI projects listed below. Alongside, I work at Planzer (logistics) and Airloop La Plage while I look for my next data role.">Installé à Genève avec un permis B. J'ai obtenu la certification Azure DP-900 et trois accréditations Databricks, et je construis les projets data et IA présentés ci-dessous. En parallèle, je travaille chez Planzer (logistique) et à l'Airloop La Plage le temps de trouver mon prochain poste data.</p>
+      <p data-en="Settled in Geneva with a B permit. Earned the Azure DP-900 and three Databricks accreditations, and I build the data and AI projects listed below. Alongside, I work at Planzer (logistics) and Airloop La Plage while I look for my next data role.">Installé à Genève avec un permis B. J'ai obtenu la certification Azure DP-900 et trois accréditations Databricks, et je construis les projets data et IA présentés plus bas. En parallèle, je travaille chez Planzer (logistique) et à l'Airloop La Plage le temps de trouver mon prochain poste data.</p>
+    </div>
+  </div>
+</section>
+
+<section id="ecole">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="t" data-en="An engineer trained on real projects">Un ingénieur formé sur des projets réels</h2>
+      <p data-en="Five years of engineering school, three of them in work-study. Every course started from a real business problem, solved in a team and defended in front of a jury.">Cinq ans d'école d'ingénieurs, dont trois en alternance. Chaque module partait d'un problème d'entreprise réel, résolu en équipe et défendu devant un jury.</p>
+    </div>
+
+    <div class="school">
+      <div>
+        <button type="button" class="diploma" data-view="diplome"><img src="assets/certs/diplome-cesi.jpg" alt="Diplôme d'ingénieur CESI de Lyes Toumi" loading="lazy"><span data-en="Engineering degree, issued 12 December 2025. Click to enlarge.">Diplôme d'ingénieur délivré le 12 décembre 2025. Cliquer pour agrandir.</span></button>
+        <ul class="facts">
+          <li><span data-en="School">École</span><b>CESI École d'Ingénieurs, Lyon</b></li>
+          <li><span data-en="Degree">Titre</span><b data-en="Engineering degree, CTI-accredited">Ingénieur diplômé, habilité CTI</b></li>
+          <li><span data-en="Level">Niveau</span><b data-en="Master's degree (grade de Master)">Grade de Master (Bac+5)</b></li>
+          <li><span data-en="Major">Spécialité</span><b data-en="Computer science, Data &amp; AI">Informatique, Data &amp; IA</b></li>
+          <li><span data-en="Track">Parcours</span><b data-en="2021 to 2025, 3 years work-study">2021 à 2025, dont 3 ans en alternance</b></li>
+        </ul>
+      </div>
+
+      <div class="method">
+        <h3 data-en="The CESI method: learning by solving">La méthode CESI : apprendre en résolvant</h3>
+        <p data-en="CESI teaches through problem- and project-based learning. No lecture first: each unit opens on a situation taken from industry, and the team has to find, learn and apply what it needs to deliver. That is exactly how a data project runs in a company.">CESI enseigne par problèmes et par projets. Pas de cours magistral d'abord : chaque module s'ouvre sur une situation tirée de l'entreprise, et l'équipe doit trouver, apprendre et appliquer ce qu'il faut pour livrer. C'est exactement comme ça que se déroule un projet data en entreprise.</p>
+        <ol class="cycle">
+          <li><b data-en="Real problem">Problème réel</b><span data-en="A brief from a company context">Un cahier des charges issu de l'entreprise</span></li>
+          <li><b data-en="Team research">Recherche en équipe</b><span data-en="Split the work, learn what is missing">Répartir le travail, apprendre ce qui manque</span></li>
+          <li><b data-en="Build">Réalisation</b><span data-en="Code, data, deliverables on a deadline">Code, données, livrables à date fixe</span></li>
+          <li><b data-en="Jury defence">Soutenance</b><span data-en="Present and defend the choices made">Présenter et défendre ses choix</span></li>
+        </ol>
+        <h3 data-en="Projects delivered at school" style="font-size:22px">Projets menés à l'école</h3>
+        <ul class="school-projects">
+          <li><h4 data-en="Hospital data warehouse">Entrepôt de données hospitalier</h4><p data-en="Consolidated heterogeneous sources into a data warehouse with a full ETL chain, then produced management statistics for the hospital.<small>Data warehouse, ETL, dimensional modelling, SQL</small>">Consolidation de sources hétérogènes dans un entrepôt de données avec une chaîne ETL complète, puis restitution de statistiques de pilotage pour l'hôpital.<small>Entrepôt de données, ETL, modélisation dimensionnelle, SQL</small></p></li>
+          <li><h4 data-en="Delivery route optimisation">Optimisation de tournées de livraison</h4><p data-en="Operations research and metaheuristics to plan a fleet's delivery routes and cut its fuel consumption.<small>Operations research, metaheuristics, Python</small>">Recherche opérationnelle et méta-heuristiques pour planifier les tournées d'une flotte et réduire sa consommation de carburant.<small>Recherche opérationnelle, méta-heuristiques, Python</small></p></li>
+          <li><h4 data-en="Predictive AI in healthcare">IA prédictive en santé</h4><p data-en="Data preparation and anonymisation, then training and comparing several machine learning models on health data.<small>Machine learning, anonymisation, model evaluation</small>">Préparation et anonymisation des données, puis entraînement et comparaison de plusieurs modèles de machine learning sur des données de santé.<small>Machine learning, anonymisation, évaluation de modèles</small></p></li>
+          <li><h4 data-en="Cybersecurity">Cybersécurité</h4><p data-en="Security of systems and networks, building on the Cisco CCNA.<small>Networks, security, Cisco CCNA</small>">Sécurité des systèmes et des réseaux, dans la continuité du Cisco CCNA.<small>Réseaux, sécurité, Cisco CCNA</small></p></li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
@@ -301,10 +406,17 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 <section id="projets">
   <div class="wrap">
     <div class="sec-head">
-      <h2 class="t" data-en="Projects">Projets</h2>
-      <p data-en="Personal projects, built end to end and published on GitHub. The code is open: you can read it, run it and judge for yourself.">Des projets personnels construits de bout en bout et publiés sur GitHub. Le code est ouvert : vous pouvez le lire, le lancer et juger sur pièce.</p>
+      <h2 class="t" data-en="Personal projects">Projets personnels</h2>
+      <p data-en="Built end to end on my own time, and published as open source on GitHub.">Construits de bout en bout sur mon temps libre, et publiés en open source sur GitHub.</p>
     </div>
     <div class="projects">
+      <article class="proj soon">
+        <span class="state" data-en="In progress">En construction</span>
+        <h3 data-en="Swiss rail punctuality dashboard">Dashboard ponctualité CFF</h3>
+        <p data-en="Millions of real train arrivals from Swiss open data, modelled in SQL and turned into a public dashboard: which lines, stations and hours are late, and why.">Des millions d'arrivées réelles de trains issues de l'open data suisse, modélisées en SQL et transformées en dashboard public : quelles lignes, quelles gares et quelles heures sont en retard, et pourquoi.</p>
+        <div class="stack"><span>SQL</span><span>dbt</span><span>DuckDB</span><span>GitHub Actions</span><span>Power BI</span></div>
+        <a href="https://github.com/Toumil94" target="_blank" rel="noopener" data-en="Follow on GitHub">Suivre sur GitHub</a>
+      </article>
       <article class="proj live">
         <span class="state" data-en="Deployed">Déployé</span>
         <h3>Job Hunter AI</h3>
@@ -326,12 +438,17 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <div class="stack"><span>LLM</span><span data-en="AI orchestration">Orchestration IA</span><span>Python</span><span>PDF</span></div>
         <a href="https://github.com/Toumil94" target="_blank" rel="noopener" data-en="See on GitHub">Voir sur GitHub</a>
       </article>
+      <article class="proj live">
+        <span class="state" data-en="Delivered">Livré</span>
+        <h3 data-en="Driving school website">Site web pour une auto-école</h3>
+        <p data-en="A complete website for a driving school: online booking, automated slot management and an availability calendar.">Un site complet pour une auto-école : réservation en ligne, gestion automatisée des créneaux et calendrier de disponibilité.</p>
+        <div class="stack"><span data-en="Online booking">Réservation en ligne</span><span data-en="Scheduling">Planification</span><span>Web</span></div>
+      </article>
       <article class="proj">
-        <span class="state" data-en="In progress">En cours</span>
-        <h3 data-en="Multi-agent application assistant">Assistant de candidature multi-agents</h3>
-        <p data-en="A team of AI agents that reads an offer, adapts the CV and cover letter, and prepares the email for approval. A human validates every send.">Une équipe d'agents IA qui lit une offre, adapte le CV et la lettre, puis prépare le mail pour validation. Chaque envoi est validé par un humain.</p>
-        <div class="stack"><span>Claude Agent SDK</span><span>Gmail API</span><span>Python</span></div>
-        <a href="https://github.com/Toumil94" target="_blank" rel="noopener" data-en="Follow on GitHub">Suivre sur GitHub</a>
+        <span class="state" data-en="Self-training">Autoformation</span>
+        <h3>Dataiku &amp; Tableau Prep</h3>
+        <p data-en="Self-taught on the free editions: data preparation flows in Dataiku and Tableau Prep, then visualisations in Tableau.">Formation en autonomie sur les versions gratuites : flux de préparation de données sous Dataiku et Tableau Prep, puis visualisations sous Tableau.</p>
+        <div class="stack"><span>Dataiku</span><span>Tableau Prep</span><span>Tableau</span></div>
       </article>
     </div>
   </div>
@@ -347,9 +464,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <div class="skill"><h3 data-en="AI &amp; LLM">IA &amp; LLM</h3><p>RAG, LangChain, embeddings, vector DB, Claude &amp; OpenAI API, agents IA, prompt engineering</p></div>
       <div class="skill"><h3>Data Engineering</h3><p>Python, SQL, PySpark, ETL / ELT, Talend, PostgreSQL, MongoDB, modélisation dimensionnelle, data quality, Git, CI/CD</p></div>
       <div class="skill"><h3>Cloud</h3><p>Databricks, Microsoft Azure, Azure Data Factory, Delta Lake, architecture Lakehouse, Snowflake</p></div>
-      <div class="skill"><h3>BI &amp; Analytics</h3><p>Power BI, DAX, SAP BusinessObjects, Qlik, Excel, conception de KPI</p></div>
+      <div class="skill"><h3>BI &amp; Analytics</h3><p>Power BI, DAX, SAP BusinessObjects, Qlik, Tableau, Dataiku, Excel, conception de KPI</p></div>
       <div class="skill"><h3>Business Analysis</h3><p data-en="Requirements, functional specifications, UAT, stakeholders, change management, user training">Recueil des besoins, spécifications fonctionnelles, recette, parties prenantes, conduite du changement, formation</p></div>
-      <div class="skill"><h3 data-en="Languages">Langues</h3><p data-en="French (native), English (C1, TOEIC 910), Spanish (B1)">Français (natif), anglais (C1, TOEIC 910), espagnol (B1)</p></div>
+      <div class="skill"><h3 data-en="Languages">Langues</h3><p data-en="French (native), English (C1), Spanish (B1)">Français (natif), anglais (C1), espagnol (B1)</p></div>
     </div>
   </div>
 </section>
@@ -357,22 +474,18 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 <section id="certifications">
   <div class="wrap">
     <div class="sec-head">
-      <h2 class="t" data-en="Certifications &amp; education">Certifications et formation</h2>
-      <p data-en="Each certification can be checked with the issuer.">Chaque certification peut être vérifiée auprès de l'organisme.</p>
+      <h2 class="t" data-en="Certifications">Certifications</h2>
+      <p data-en="Click a thumbnail to see the certificate. Microsoft and Databricks credentials can also be checked with the issuer.">Cliquez sur une miniature pour voir le certificat. Les titres Microsoft et Databricks sont aussi vérifiables auprès de l'organisme.</p>
     </div>
     <ul class="certs">
-      <li><b>Azure Data Fundamentals (DP-900)</b><span>Microsoft, 2026</span><a href="https://learn.microsoft.com/fr-fr/users/lyestoumi-4345/credentials/certification/azure-data-fundamentals" target="_blank" rel="noopener" data-en="Verify">Vérifier</a></li>
-      <li><b>Databricks Lakehouse Fundamentals</b><span>Databricks, 2026</span><a href="https://credentials.databricks.com" target="_blank" rel="noopener" data-en="Verify">Vérifier</a></li>
-      <li><b>Generative AI Fundamentals</b><span>Databricks, 2026</span><a href="https://credentials.databricks.com" target="_blank" rel="noopener" data-en="Verify">Vérifier</a></li>
-      <li><b>AI Agent Fundamentals</b><span>Databricks, 2026</span><a href="https://credentials.databricks.com" target="_blank" rel="noopener" data-en="Verify">Vérifier</a></li>
-      <li><b>Cisco CCNA</b><span>Cisco</span><em data-en="Networking">Réseau</em></li>
-      <li><b>TOEIC 910 / 990</b><span>ETS Global</span><em>C1</em></li>
-      <li><b>Data Engineer Associate</b><span>Databricks</span><em data-en="In preparation">En préparation</em></li>
+      <li><button type="button" class="thumb" data-view="azure" aria-label="Voir le certificat Azure"><img src="assets/certs/azure-dp900.jpg" alt="" loading="lazy"></button><b>Azure Data Fundamentals (DP-900)</b><span data-en="Microsoft, January 2026">Microsoft, janvier 2026</span><span class="acts"><button type="button" data-view="azure" data-en="View">Voir</button><a href="https://learn.microsoft.com/fr-fr/users/lyestoumi-4345/credentials/certification/azure-data-fundamentals" target="_blank" rel="noopener" data-en="Verify">Vérifier</a></span></li>
+      <li><button type="button" class="thumb" data-view="dbx-fund" aria-label="Voir l'accréditation"><img src="assets/certs/databricks-fundamentals.jpg" alt="" loading="lazy"></button><b>Databricks Fundamentals</b><span data-en="Databricks Academy, February 2026">Databricks Academy, février 2026</span><span class="acts"><button type="button" data-view="dbx-fund" data-en="View">Voir</button><a href="https://credentials.databricks.com" target="_blank" rel="noopener" data-en="Verify">Vérifier</a></span></li>
+      <li><button type="button" class="thumb" data-view="dbx-genai" aria-label="Voir l'accréditation"><img src="assets/certs/databricks-genai.jpg" alt="" loading="lazy"></button><b>Generative AI Fundamentals</b><span data-en="Databricks Academy, February 2026">Databricks Academy, février 2026</span><span class="acts"><button type="button" data-view="dbx-genai" data-en="View">Voir</button><a href="https://credentials.databricks.com" target="_blank" rel="noopener" data-en="Verify">Vérifier</a></span></li>
+      <li><button type="button" class="thumb" data-view="dbx-agents" aria-label="Voir l'accréditation"><img src="assets/certs/databricks-agents.jpg" alt="" loading="lazy"></button><b>AI Agent Fundamentals</b><span data-en="Databricks Academy, February 2026">Databricks Academy, février 2026</span><span class="acts"><button type="button" data-view="dbx-agents" data-en="View">Voir</button><a href="https://credentials.databricks.com" target="_blank" rel="noopener" data-en="Verify">Vérifier</a></span></li>
+      <li><button type="button" class="thumb" data-view="diplome" aria-label="Voir le diplôme"><img src="assets/certs/diplome-cesi.jpg" alt="" loading="lazy"></button><b data-en="CESI engineering degree, Master's level">Diplôme d'ingénieur CESI, grade de Master</b><span data-en="CESI, December 2025">CESI, décembre 2025</span><span class="acts"><button type="button" data-view="diplome" data-en="View">Voir</button></span></li>
+      <li><span class="nothumb">CCNA</span><b>Cisco CCNA</b><span data-en="Cisco, networking">Cisco, réseau</span><span class="acts"></span></li>
+      <li><span class="nothumb">DE</span><b>Data Engineer Associate</b><span>Databricks</span><span class="acts"><em data-en="In preparation">En préparation</em></span></li>
     </ul>
-    <div class="edu" style="margin-top:48px">
-      <div><h3 data-en="Engineering degree, Data &amp; AI">Diplôme d'ingénieur, Data &amp; IA</h3><p data-en="CESI School of Engineering, 2021 to 2025. CTI-accredited, Master's level.">CESI École d'Ingénieurs, 2021 à 2025. Titre reconnu par la CTI, niveau Master (Bac+5).</p></div>
-      <div><h3 data-en="First year, Mathematics">Licence 1 Mathématiques</h3><p data-en="Université Côte d'Azur, Nice, 2019 to 2020">Université Côte d'Azur, Nice, 2019 à 2020</p></div>
-    </div>
   </div>
 </section>
 
@@ -381,7 +494,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <div>
       <h2 class="t" data-en="Let's talk.">Parlons-en.</h2>
       <p class="lede" data-en="Based in Geneva with a B permit, available immediately, in Geneva or anywhere in Romandy.">Basé à Genève avec un permis B, disponible immédiatement, à Genève ou ailleurs en Suisse romande.</p>
-      <div class="cvs">
+      <div class="cta">
         <a class="btn btn-solid" href="cv/CV_Lyes_Toumi_General_FR.pdf" download data-en="CV in French">CV en français</a>
         <a class="btn btn-line" href="cv/CV_Lyes_Toumi_General_EN.pdf" download data-en="CV in English">CV en anglais</a>
       </div>
@@ -403,70 +516,148 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   </div>
 </footer>
 
+<dialog class="lb" id="lb" aria-label="Certificat">
+  <figure>
+    <img id="lb-img" src="" alt="">
+    <figcaption><span id="lb-cap"></span><button type="button" id="lb-close" data-en="Close">Fermer</button></figcaption>
+  </figure>
+</dialog>
+
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script>
 (function(){
-  // ---------- i18n : le texte FR est dans le HTML, l'anglais dans data-en ----------
+  var html=document.documentElement;
+  var lang='fr';
+  function L(fr,en){return lang==='en'?en:fr;}
+
+  /* ---------- données ---------- */
+  var BOARD=[
+    {t:'09:02',fr:'DATA ENGINEER',en:'DATA ENGINEER'},
+    {t:'09:14',fr:'AI / ML ENGINEER',en:'AI / ML ENGINEER'},
+    {t:'09:27',fr:'BI & ANALYTICS',en:'BI & ANALYTICS'},
+    {t:'09:41',fr:'BUSINESS ANALYST',en:'BUSINESS ANALYST'}
+  ];
+  var STOPS=[
+    {y:'2019',fr:{n:'Nice',s:'Licence de maths',h:'Université Côte d\'Azur',w:'Nice, 2019 à 2020',p:'Une première année de licence de mathématiques. C\'est là que se construit la base : algèbre, analyse, probabilités, tout ce qui sert aujourd\'hui en statistiques et en machine learning.'},
+          en:{n:'Nice',s:'Maths degree',h:'Université Côte d\'Azur',w:'Nice, 2019 to 2020',p:'A first year of a mathematics degree. That is where the foundation was laid: algebra, analysis, probability, everything I now use in statistics and machine learning.'}},
+    {y:'2021',fr:{n:'Lyon',s:'École d\'ingénieurs',h:'CESI École d\'Ingénieurs',w:'Lyon, 2021 à 2025',p:'Cycle ingénieur en informatique, spécialité Data & IA, par problèmes et par projets.',l:['Entrepôt de données hospitalier','Optimisation de tournées par recherche opérationnelle','IA prédictive en santé','Cybersécurité et réseaux']},
+          en:{n:'Lyon',s:'Engineering school',h:'CESI School of Engineering',w:'Lyon, 2021 to 2025',p:'Engineering programme in computer science, majoring in Data & AI, taught through problems and projects.',l:['Hospital data warehouse','Route optimisation with operations research','Predictive AI in healthcare','Cybersecurity and networks']}},
+    {y:'2022',fr:{n:'Créteil',s:'EssilorLuxottica',h:'EssilorLuxottica, siège',w:'Créteil, oct. 2022 à oct. 2025',p:'Trois ans d\'alternance dans l\'équipe data du siège, sur les données ERP, ventes, stocks et supply chain de 3 régions.',l:['Plateforme Databricks sur Azure','30 à 40 tableaux de bord sur 4 outils BI','Migration Qlik vers SAP BO, 75 utilisateurs formés']},
+          en:{n:'Créteil',s:'EssilorLuxottica',h:'EssilorLuxottica, headquarters',w:'Créteil, Oct. 2022 to Oct. 2025',p:'Three years of work-study in the HQ data team, on ERP, sales, inventory and supply chain data for 3 regions.',l:['Databricks platform on Azure','30 to 40 dashboards on 4 BI tools','Qlik to SAP BO migration, 75 users trained']}},
+    {y:'Asie',fr:{n:'Bangkok',s:'Mission IA',h:'Mission IA à Bangkok',w:'Avec les équipes de Thaïlande et des Philippines',p:'Mise en production du chatbot RAG interne, d\'abord avec une équipe pilote de 12 personnes puis toute l\'équipe support. Résultat : 30% de temps de recherche d\'information en moins.'},
+          en:{n:'Bangkok',s:'AI mission',h:'AI mission in Bangkok',w:'With the teams in Thailand and the Philippines',p:'Put the internal RAG chatbot into production, first with a 12-person pilot team, then the whole support team. Result: 30% less time spent searching for information.'},en_y:'Asia'},
+    {y:'2025',fr:{n:'Diplômé',s:'Grade de Master',h:'Ingénieur diplômé',w:'CESI, titre habilité CTI',p:'Titre d\'ingénieur en informatique conférant le grade de Master, délivré le 12 décembre 2025.'},
+          en:{n:'Graduated',s:'Master\'s level',h:'Graduate engineer',w:'CESI, CTI-accredited degree',p:'Engineering degree in computer science conferring a Master\'s-level degree, issued on 12 December 2025.'}},
+    {y:'2026',fr:{n:'Genève',s:'Permis B',h:'Installé à Genève',w:'Résident, permis de travail B',p:'Installation à Genève et montée en compétences en continu.',l:['Azure Data Fundamentals (DP-900)','Trois accréditations Databricks','Projets open source data et IA']},
+          en:{n:'Geneva',s:'B permit',h:'Settled in Geneva',w:'Resident, B work permit',p:'Moved to Geneva and kept building skills.',l:['Azure Data Fundamentals (DP-900)','Three Databricks accreditations','Open-source data and AI projects']}},
+    {y:'?',next:true,fr:{n:'Votre équipe',s:'Prochain arrêt',h:'Prochain arrêt : votre équipe',w:'Genève et Suisse romande, disponible immédiatement',p:'Data Engineer, AI Engineer, BI ou Business Analyst data. Si votre équipe a besoin de quelqu\'un qui sait construire le pipeline, le tableau de bord et l\'assistant IA, parlons-en.',cta:'Me contacter'},
+          en:{n:'Your team',s:'Next stop',h:'Next stop: your team',w:'Geneva and Romandy, available immediately',p:'Data Engineer, AI Engineer, BI or data Business Analyst. If your team needs someone who can build the pipeline, the dashboard and the AI assistant, let\'s talk.',cta:'Get in touch'}}
+  ];
+  var VIEWS={
+    'azure':{src:'assets/certs/azure-dp900.jpg',fr:'Microsoft Certified : Azure Data Fundamentals',en:'Microsoft Certified: Azure Data Fundamentals'},
+    'dbx-fund':{src:'assets/certs/databricks-fundamentals.jpg',fr:'Databricks Fundamentals',en:'Databricks Fundamentals'},
+    'dbx-genai':{src:'assets/certs/databricks-genai.jpg',fr:'Databricks Generative AI Fundamentals',en:'Databricks Generative AI Fundamentals'},
+    'dbx-agents':{src:'assets/certs/databricks-agents.jpg',fr:'Databricks AI Agent Fundamentals',en:'Databricks AI Agent Fundamentals'},
+    'diplome':{src:'assets/certs/diplome-cesi.jpg',fr:'Diplôme d\'ingénieur CESI, grade de Master',en:'CESI engineering degree, Master\'s level'}
+  };
+
+  /* ---------- panneau à palettes ---------- */
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var CH=' ABCDEFGHIJKLMNOPQRSTUVWXYZ/&-0123456789';
+  var rowsEl=document.getElementById('rows');
+  function buildBoard(){
+    rowsEl.innerHTML='';
+    BOARD.forEach(function(r,ri){
+      var row=document.createElement('div');row.className='row';
+      var t=document.createElement('span');t.className='time';t.textContent=r.t;
+      var f=document.createElement('div');f.className='flaps';f.setAttribute('aria-label',r[lang]);
+      var st=document.createElement('span');st.className='st';st.textContent=L('Prêt','Ready');
+      var word=r[lang];
+      for(var i=0;i<word.length;i++){
+        var c=document.createElement('span');c.className='flap'+(word[i]===' '?' sp':'');c.setAttribute('aria-hidden','true');
+        c.textContent=word[i]===' '?' ':word[i];
+        f.appendChild(c);
+        if(!reduce&&word[i]!==' ')spin(c,word[i],ri*140+i*28);
+      }
+      row.appendChild(t);row.appendChild(f);row.appendChild(st);rowsEl.appendChild(row);
+    });
+  }
+  function spin(el,target,delay){
+    var start=Math.floor(Math.random()*CH.length),steps=6+Math.floor(Math.random()*10),k=0;
+    el.textContent=CH[start]===' '?'A':CH[start];
+    setTimeout(function step(){
+      k++;
+      el.classList.remove('turn');void el.offsetWidth;el.classList.add('turn');
+      if(k>=steps){el.textContent=target;return;}
+      var c=CH[(start+k)%CH.length];el.textContent=c===' '?'A':c;
+      setTimeout(step,70);
+    },delay);
+  }
+
+  /* ---------- horloge ---------- */
+  var clock=document.getElementById('clock');
+  function tick(){try{clock.textContent=new Intl.DateTimeFormat('fr-CH',{hour:'2-digit',minute:'2-digit',timeZone:'Europe/Zurich'}).format(new Date());}catch(e){}}
+  tick();setInterval(tick,15000);
+
+  /* ---------- ligne de parcours ---------- */
+  var lineEl=document.getElementById('line'),panel=document.getElementById('panel'),cur=STOPS.length-2;
+  function buildLine(){
+    lineEl.innerHTML='';
+    STOPS.forEach(function(s,i){
+      var d=s[lang];
+      var b=document.createElement('button');b.type='button';b.className='stop'+(s.next?' next':'');
+      b.setAttribute('role','tab');b.setAttribute('aria-selected',i===cur);b.setAttribute('aria-controls','panel');
+      b.innerHTML='<span class="dot">'+(lang==='en'&&s.en_y?s.en_y:s.y)+'</span><span><b>'+d.n+'</b><small>'+d.s+'</small></span>';
+      b.addEventListener('click',function(){cur=i;buildLine();showStop();});
+      lineEl.appendChild(b);
+    });
+  }
+  function showStop(){
+    var s=STOPS[cur],d=s[lang];
+    panel.className='panel'+(s.next?' next':'');
+    var list=d.l?'<ul>'+d.l.map(function(x){return '<li>'+x+'</li>';}).join('')+'</ul>':'';
+    var cta=d.cta?'<p style="margin-top:16px"><a class="btn btn-solid" href="#contact">'+d.cta+'</a></p>':'';
+    panel.innerHTML='<div><h3>'+d.h+'</h3><p class="where">'+d.w+'</p></div><div><p>'+d.p+'</p>'+list+cta+'</div>';
+  }
+
+  /* ---------- visionneuse ---------- */
+  var lb=document.getElementById('lb'),lbImg=document.getElementById('lb-img'),lbCap=document.getElementById('lb-cap');
+  document.addEventListener('click',function(e){
+    var t=e.target.closest('[data-view]');
+    if(!t)return;
+    var v=VIEWS[t.dataset.view];if(!v)return;
+    lbImg.src=v.src;lbImg.alt=v[lang];lbCap.textContent=v[lang];
+    if(lb.showModal){lb.showModal();}else{window.open(v.src,'_blank');}
+  });
+  document.getElementById('lb-close').addEventListener('click',function(){lb.close();});
+  lb.addEventListener('click',function(e){if(e.target===lb)lb.close();});
+
+  /* ---------- i18n ---------- */
   var nodes=[].slice.call(document.querySelectorAll('[data-en]'));
   nodes.forEach(function(n){n.dataset.fr=n.innerHTML;});
   var cvLinks=[].slice.call(document.querySelectorAll('[data-cv]'));
   function setLang(l){
-    document.documentElement.lang=l;
+    lang=l;html.lang=l;
     nodes.forEach(function(n){n.innerHTML=n.dataset[l];});
     cvLinks.forEach(function(a){a.href='cv/CV_Lyes_Toumi_General_'+l.toUpperCase()+'.pdf';});
     document.querySelectorAll('.lang button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.set===l);});
     try{localStorage.setItem('lang',l);}catch(e){}
-    flipBoard();
+    buildBoard();buildLine();showStop();
   }
   document.querySelectorAll('.lang button').forEach(function(b){b.addEventListener('click',function(){setLang(b.dataset.set);});});
-
-  // ---------- horloge de Genève ----------
-  var clock=document.getElementById('clock');
-  function tick(){
-    try{clock.textContent=new Intl.DateTimeFormat('fr-CH',{hour:'2-digit',minute:'2-digit',timeZone:'Europe/Zurich'}).format(new Date());}
-    catch(e){var d=new Date();clock.textContent=('0'+d.getHours()).slice(-2)+':'+('0'+d.getMinutes()).slice(-2);}
-  }
-  tick();setInterval(tick,15000);
-
-  // ---------- panneau à palettes : un seul moment animé, au chargement ----------
-  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var chars='ABCDEFGHIJKLMNOPRSTUVZ0123456789';
-  function flip(el,delay){
-    var lang=document.documentElement.lang;
-    var target=el.dataset.en?el.dataset[lang]:(el.dataset.t||(el.dataset.t=el.textContent));
-    el.textContent=target;
-    if(reduce){return;}
-    var run=(el._run||0)+1;el._run=run;
-    var frames=12+Math.floor(Math.random()*8),f=0;
-    setTimeout(function step(){
-      if(el._run!==run){return;}
-      f++;
-      var out='';
-      for(var i=0;i<target.length;i++){
-        var c=target[i];
-        out+=(c===' '||c==='/'||c==='&'||f>frames-(target.length-i)*0.6)?c:chars[Math.floor(Math.random()*chars.length)];
-      }
-      el.textContent=f>=frames?target:out;
-      if(f<frames)setTimeout(step,45);
-    },delay);
-  }
-  function flipBoard(){
-    document.querySelectorAll('.board .fl').forEach(function(el,i){flip(el,120+i*70);});
-  }
-
   var saved=null;try{saved=localStorage.getItem('lang');}catch(e){}
-  if(saved==='en'){setLang('en');}else{flipBoard();}
+  setLang(saved==='en'?'en':'fr');
 
-  // ---------- easter egg (Konami ou 5 clics sur le logo) ----------
+  /* ---------- easter egg ---------- */
   var toast=document.getElementById('toast');
   function egg(){
-    toast.textContent=document.documentElement.lang==='en'?'You found the easter egg. Curiosity is a skill I value.':'Easter egg trouvé. La curiosité, c\'est une qualité que j\'apprécie.';
+    toast.textContent=L('Easter egg trouvé. La curiosité, c\'est une qualité que j\'apprécie.','You found the easter egg. Curiosity is a skill I value.');
     toast.classList.add('show');setTimeout(function(){toast.classList.remove('show');},3200);
   }
   var seq=[38,38,40,40,37,39,37,39,66,65],pos=0;
   document.addEventListener('keydown',function(e){pos=(e.keyCode===seq[pos])?pos+1:(e.keyCode===seq[0]?1:0);if(pos===seq.length){pos=0;egg();}});
-  var clicks=0;document.querySelector('.mark').addEventListener('click',function(){clicks++;if(clicks>=5){clicks=0;egg();}});
+  var clicks=0;document.getElementById('mark').addEventListener('click',function(){clicks++;if(clicks>=5){clicks=0;egg();}});
 })();
 </script>
 </body>
