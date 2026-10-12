@@ -111,8 +111,39 @@ section{padding:clamp(56px,8vw,104px) 0;border-top:1px solid var(--rule)}
 .stop b,.stop small{display:block}
 .stop b{font-size:17px;font-weight:700;line-height:1.2}
 .stop small{font-size:14px;color:var(--slate);line-height:1.3}
+.line-wrap{position:relative}
+.train{position:absolute;z-index:2;left:0;top:0;width:30px;height:16px;background:var(--red);border:2px solid var(--paper);border-radius:4px 9px 9px 4px;pointer-events:none;transition:transform .55s cubic-bezier(.65,0,.35,1);box-shadow:0 2px 6px rgba(22,25,29,.35)}
+.train::after{content:"";position:absolute;right:4px;top:3px;width:6px;height:6px;background:var(--paper);border-radius:1px}
+.stop .dot{box-shadow:0 0 0 0 rgba(213,43,30,0)}
+@media (hover:hover){
+.stop:hover .dot{background:var(--white);border-color:var(--red);color:var(--red)}
+.stop[aria-selected="true"]:hover .dot{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.stop.next[aria-selected="true"]:hover .dot{background:var(--red);color:#fff;border-color:var(--red)}
+.stop:hover b{color:var(--red)}
+}
+.stop:focus-visible .dot{border-color:var(--red)}
+.stop.hint .dot{animation:ping 1.6s ease-out infinite}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(213,43,30,.45)}100%{box-shadow:0 0 0 14px rgba(213,43,30,0)}}
+.line-hint{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:18px;font-size:15px;color:var(--slate)}
+.line-hint kbd{font:inherit;font-weight:650;border:1px solid var(--rule);background:var(--white);padding:1px 7px;color:var(--ink)}
 .panel{margin-top:28px;background:var(--white);border-left:6px solid var(--ink);padding:26px 28px;display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(18px,4vw,48px);min-height:170px}
 .panel.next{border-left-color:var(--red)}
+.panel .in{animation:slidein .4s cubic-bezier(.2,.8,.2,1) both}
+.panel .in+.in{animation-delay:.06s}
+@keyframes slidein{from{opacity:0;transform:translateX(18px)}to{opacity:1;transform:none}}
+.panel .yr{display:block;font-stretch:118%;font-weight:850;font-size:clamp(48px,6vw,72px);line-height:1;color:var(--rule);margin-bottom:8px}
+.panel.next .yr{color:var(--red)}
+.pnav{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;gap:12px;border-top:1px solid var(--rule);padding-top:16px;margin-top:4px}
+.pnav button{display:inline-flex;align-items:center;gap:8px;background:none;border:2px solid var(--ink);padding:9px 16px;font-weight:650;font-size:15px;cursor:pointer}
+.pnav button:hover{background:var(--ink);color:var(--paper)}
+.pnav button:disabled{opacity:.3;cursor:default;background:none;color:var(--ink)}
+.pnav .go{background:var(--ink);color:var(--paper)}
+.pnav .go:hover{background:var(--red);border-color:var(--red)}
+.prog{flex:1;display:flex;gap:4px;max-width:260px}
+.prog i{flex:1;height:4px;background:var(--rule)}
+.prog i.on{background:var(--ink)}
+.prog i.on:last-child{background:var(--red)}
+.pcount{font-size:14px;color:var(--slate);white-space:nowrap}
 .panel h3{font-stretch:108%;font-size:26px;font-weight:800;line-height:1.12;margin-bottom:6px}
 .panel .where{color:var(--slate);font-size:15px}
 .panel p{max-width:62ch}
@@ -196,14 +227,30 @@ section{padding:clamp(56px,8vw,104px) 0;border-top:1px solid var(--rule)}
 .certs em{font-style:normal;color:var(--red)}
 
 /* lightbox */
-dialog.lb{border:0;padding:0;background:transparent;max-width:min(1100px,94vw);max-height:92vh;margin:auto}
-dialog.lb::backdrop{background:rgba(22,25,29,.82)}
-.lb figure{background:var(--white);padding:14px}
-.lb img{max-height:calc(92vh - 90px);width:auto;margin:0 auto}
-.lb figcaption{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-top:12px;font-weight:600}
-.lb figcaption button{background:var(--ink);color:var(--paper);border:0;padding:8px 14px;cursor:pointer;font-weight:600}
-dialog.lb[open] figure{animation:pop .22s cubic-bezier(.3,1.3,.5,1)}
+dialog.lb{border:0;padding:0;background:transparent;width:min(1100px,94vw);max-width:none;max-height:94vh;margin:auto;overflow:visible}
+dialog.lb::backdrop{background:rgba(22,25,29,.86);backdrop-filter:blur(3px)}
+.lb figure{background:var(--white);padding:16px;position:relative}
+.lb .stage{position:relative;display:flex;align-items:center;justify-content:center;background:var(--paper);min-height:200px}
+.lb img{max-height:calc(94vh - 150px);max-width:100%;width:auto;margin:0 auto}
+.lb .x{position:absolute;top:-14px;right:-14px;width:40px;height:40px;border-radius:50%;background:var(--red);color:#fff;border:3px solid var(--white);font-size:22px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:3}
+.lb .arr{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;background:var(--ink);color:var(--paper);border:0;font-size:22px;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:.85}
+.lb .arr:hover{opacity:1;background:var(--red)}
+.lb .arr.prev{left:10px}.lb .arr.nxt{right:10px}
+.lb figcaption{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding-top:14px}
+.lb figcaption b{display:block;font-size:18px}
+.lb figcaption span{color:var(--slate);font-size:14px}
+.lb .lb-acts{display:flex;align-items:center;gap:14px;font-weight:600;font-size:15px}
+.lb .dots{display:flex;gap:6px}
+.lb .dots i{width:8px;height:8px;border-radius:50%;background:var(--rule)}
+.lb .dots i.on{background:var(--red)}
+dialog.lb[open] figure{animation:pop .25s cubic-bezier(.3,1.3,.5,1)}
+.lb img.swap{animation:fadein .25s ease}
 @keyframes pop{from{transform:scale(.94);opacity:0}to{transform:none;opacity:1}}
+@keyframes fadein{from{opacity:0}to{opacity:1}}
+.thumb{transition:transform .15s,box-shadow .15s}
+.thumb:hover{transform:scale(1.08);box-shadow:0 6px 14px -6px rgba(22,25,29,.4)}
+.diploma{transition:box-shadow .2s}
+.diploma:hover{box-shadow:0 14px 30px -18px rgba(22,25,29,.5)}
 
 /* contact */
 .contact{background:var(--ink);color:var(--paper);border:0}
@@ -212,7 +259,17 @@ dialog.lb[open] figure{animation:pop .22s cubic-bezier(.3,1.3,.5,1)}
 .contact-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(28px,5vw,72px);align-items:end}
 .reach{list-style:none;border-top:1px solid #3A4048}
 .reach li{border-bottom:1px solid #3A4048}
-.reach a{display:flex;justify-content:space-between;gap:16px;padding:16px 0;text-decoration:none;font-size:18px;font-weight:600}
+.reach a{display:flex;align-items:center;gap:14px;padding:16px 0;text-decoration:none;font-size:18px;font-weight:600}
+.reach a .ico{width:22px;height:22px;flex:none}
+.reach a span{margin-left:auto}
+.reach a:hover{color:#fff}
+.reach .li a .ico{color:#4C9BE8}
+.social{display:flex;gap:10px;margin-top:22px}
+.social a{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:650;font-size:15px;padding:9px 14px;border:2px solid var(--ink)}
+.social a:hover{background:var(--ink);color:var(--paper)}
+.social .ico{width:18px;height:18px}
+.social a.lk{background:#0A66C2;border-color:#0A66C2;color:#fff}
+.social a.lk:hover{background:var(--ink);border-color:var(--ink)}
 .reach a span{color:#9AA1AB;font-weight:450;font-size:15px}
 .reach a:hover span{color:var(--amber)}
 .contact .btn{border-color:var(--paper);color:var(--paper)}
@@ -237,6 +294,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   .cycle li:nth-child(3){padding-left:0;border-left:0}
 }
 @media (max-width:760px){
+  .train{display:none}
   .links{display:none}
   .line{grid-template-columns:1fr;gap:0}
   .line::before{left:24px;right:auto;top:27px;bottom:96px;width:8px;height:auto}
@@ -293,6 +351,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <a class="btn btn-solid" href="#contact" data-en="Get in touch">Me contacter</a>
         <a class="btn btn-line" href="cv/CV_Lyes_Toumi_General_FR.pdf" data-cv download data-en="Download my CV">Télécharger mon CV</a>
       </div>
+      <div class="social">
+        <a class="lk" href="https://www.linkedin.com/in/lyes-toumi" data-linkedin target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>LinkedIn</a>
+        <a href="https://github.com/Toumil94" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.2-3.1-.1-.4-.5-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.6 18.3 5 18.3 5c.7 1.6.3 2.8.1 3.2.8.8 1.2 1.9 1.2 3.1 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1.1.9 2.3v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>GitHub</a>
+      </div>
     </div>
 
     <div class="board" aria-label="Postes recherchés">
@@ -312,7 +374,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <h2 class="t" data-en="Line Lyes Toumi">Ligne Lyes Toumi</h2>
       <p data-en="From maths in Nice to data in Geneva. Pick a stop to see what happened there.">Des maths à Nice jusqu'à la data à Genève. Choisissez un arrêt pour voir ce qui s'y est passé.</p>
     </div>
-    <div class="line" role="tablist" aria-label="Parcours" id="line"></div>
+    <p class="line-hint"><span data-en="Click a stop, or use the arrows below. On a computer, the ← and → keys work too.">Cliquez sur un arrêt ou utilisez les flèches. Au clavier, les touches ← et → marchent aussi.</span></p>
+    <div class="line-wrap"><div class="line" role="tablist" aria-label="Parcours" id="line"></div><span class="train" id="train" aria-hidden="true"></span></div>
     <div class="panel" id="panel" role="tabpanel" aria-live="polite"></div>
   </div>
 </section>
@@ -500,10 +563,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       </div>
     </div>
     <ul class="reach">
-      <li><a href="mailto:toumilyes15@gmail.com">E-mail<span>toumilyes15@gmail.com</span></a></li>
-      <li><a href="tel:+41765221746" data-en="Phone<span>+41 76 522 17 46</span>">Téléphone<span>+41 76 522 17 46</span></a></li>
-      <li><a href="https://linkedin.com/in/lyes-toumi" target="_blank" rel="noopener">LinkedIn<span>lyes-toumi</span></a></li>
-      <li><a href="https://github.com/Toumil94" target="_blank" rel="noopener">GitHub<span>Toumil94</span></a></li>
+      <li class="li"><a href="https://www.linkedin.com/in/lyes-toumi" data-linkedin target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>LinkedIn<span data-en="View my profile">Voir mon profil</span></a></li>
+      <li><a href="mailto:toumilyes15@gmail.com"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" d="M3 5h18v14H3z M3 6l9 7 9-7"/></svg>E-mail<span>toumilyes15@gmail.com</span></a></li>
+      <li><a href="tel:+41765221746"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" d="M7 2h10v20H7z M11 18h2"/></svg><b data-en="Phone" style="font-weight:600">Téléphone</b><span>+41 76 522 17 46</span></a></li>
+      <li><a href="https://github.com/Toumil94" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.2-3.1-.1-.4-.5-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.6 18.3 5 18.3 5c.7 1.6.3 2.8.1 3.2.8.8 1.2 1.9 1.2 3.1 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1.1.9 2.3v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>GitHub<span>Toumil94</span></a></li>
     </ul>
   </div>
 </section>
@@ -518,8 +581,16 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
 <dialog class="lb" id="lb" aria-label="Certificat">
   <figure>
-    <img id="lb-img" src="" alt="">
-    <figcaption><span id="lb-cap"></span><button type="button" id="lb-close" data-en="Close">Fermer</button></figcaption>
+    <button type="button" class="x" id="lb-close" aria-label="Fermer">×</button>
+    <div class="stage">
+      <button type="button" class="arr prev" id="lb-prev" aria-label="Précédent">‹</button>
+      <img id="lb-img" src="" alt="">
+      <button type="button" class="arr nxt" id="lb-next" aria-label="Suivant">›</button>
+    </div>
+    <figcaption>
+      <div><b id="lb-cap"></b><span id="lb-sub"></span></div>
+      <div class="lb-acts"><div class="dots" id="lb-dots"></div><a id="lb-verify" target="_blank" rel="noopener"></a></div>
+    </figcaption>
   </figure>
 </dialog>
 
@@ -555,12 +626,13 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
           en:{n:'Your team',s:'Next stop',h:'Next stop: your team',w:'Geneva and Romandy, available immediately',p:'Data Engineer, AI Engineer, BI or data Business Analyst. If your team needs someone who can build the pipeline, the dashboard and the AI assistant, let\'s talk.',cta:'Get in touch'}}
   ];
   var VIEWS={
-    'azure':{src:'assets/certs/azure-dp900.jpg',fr:'Microsoft Certified : Azure Data Fundamentals',en:'Microsoft Certified: Azure Data Fundamentals'},
-    'dbx-fund':{src:'assets/certs/databricks-fundamentals.jpg',fr:'Databricks Fundamentals',en:'Databricks Fundamentals'},
-    'dbx-genai':{src:'assets/certs/databricks-genai.jpg',fr:'Databricks Generative AI Fundamentals',en:'Databricks Generative AI Fundamentals'},
-    'dbx-agents':{src:'assets/certs/databricks-agents.jpg',fr:'Databricks AI Agent Fundamentals',en:'Databricks AI Agent Fundamentals'},
-    'diplome':{src:'assets/certs/diplome-cesi.jpg',fr:'Diplôme d\'ingénieur CESI, grade de Master',en:'CESI engineering degree, Master\'s level'}
+    'azure':{src:'assets/certs/azure-dp900.jpg',fr:'Azure Data Fundamentals (DP-900)',en:'Azure Data Fundamentals (DP-900)',sub:{fr:'Microsoft, janvier 2026',en:'Microsoft, January 2026'},url:'https://learn.microsoft.com/fr-fr/users/lyestoumi-4345/credentials/certification/azure-data-fundamentals'},
+    'dbx-fund':{src:'assets/certs/databricks-fundamentals.jpg',fr:'Databricks Fundamentals',en:'Databricks Fundamentals',sub:{fr:'Databricks Academy, février 2026',en:'Databricks Academy, February 2026'},url:'https://credentials.databricks.com'},
+    'dbx-genai':{src:'assets/certs/databricks-genai.jpg',fr:'Generative AI Fundamentals',en:'Generative AI Fundamentals',sub:{fr:'Databricks Academy, février 2026',en:'Databricks Academy, February 2026'},url:'https://credentials.databricks.com'},
+    'dbx-agents':{src:'assets/certs/databricks-agents.jpg',fr:'AI Agent Fundamentals',en:'AI Agent Fundamentals',sub:{fr:'Databricks Academy, février 2026',en:'Databricks Academy, February 2026'},url:'https://credentials.databricks.com'},
+    'diplome':{src:'assets/certs/diplome-cesi.jpg',fr:'Diplôme d\'ingénieur CESI, grade de Master',en:'CESI engineering degree, Master\'s level',sub:{fr:'Délivré le 12 décembre 2025, titre habilité CTI',en:'Issued 12 December 2025, CTI-accredited'}}
   };
+  var ORDER=['diplome','azure','dbx-fund','dbx-genai','dbx-agents'];
 
   /* ---------- panneau à palettes ---------- */
   var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -601,37 +673,79 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   tick();setInterval(tick,15000);
 
   /* ---------- ligne de parcours ---------- */
-  var lineEl=document.getElementById('line'),panel=document.getElementById('panel'),cur=STOPS.length-2;
+  var lineEl=document.getElementById('line'),panel=document.getElementById('panel'),train=document.getElementById('train');
+  var cur=0,touched=false;
   function buildLine(){
     lineEl.innerHTML='';
     STOPS.forEach(function(s,i){
       var d=s[lang];
-      var b=document.createElement('button');b.type='button';b.className='stop'+(s.next?' next':'');
+      var b=document.createElement('button');b.type='button';
+      b.className='stop'+(s.next?' next':'')+(!touched&&i===1?' hint':'');
       b.setAttribute('role','tab');b.setAttribute('aria-selected',i===cur);b.setAttribute('aria-controls','panel');
       b.innerHTML='<span class="dot">'+(lang==='en'&&s.en_y?s.en_y:s.y)+'</span><span><b>'+d.n+'</b><small>'+d.s+'</small></span>';
-      b.addEventListener('click',function(){cur=i;buildLine();showStop();});
+      b.addEventListener('click',function(){go(i);});
       lineEl.appendChild(b);
     });
+    placeTrain();
+  }
+  function placeTrain(){
+    var st=lineEl.children[cur];if(!st||!train)return;
+    var dot=st.querySelector('.dot');
+    var x=st.offsetLeft+dot.offsetLeft+dot.offsetWidth/2-15;
+    var y=st.offsetTop+dot.offsetTop-22;
+    train.style.transform='translate('+x+'px,'+y+'px)';
+  }
+  function go(i){
+    if(i<0||i>=STOPS.length)return;
+    cur=i;touched=true;buildLine();showStop();
   }
   function showStop(){
-    var s=STOPS[cur],d=s[lang];
+    var s=STOPS[cur],d=s[lang],n=STOPS.length;
     panel.className='panel'+(s.next?' next':'');
     var list=d.l?'<ul>'+d.l.map(function(x){return '<li>'+x+'</li>';}).join('')+'</ul>':'';
     var cta=d.cta?'<p style="margin-top:16px"><a class="btn btn-solid" href="#contact">'+d.cta+'</a></p>':'';
-    panel.innerHTML='<div><h3>'+d.h+'</h3><p class="where">'+d.w+'</p></div><div><p>'+d.p+'</p>'+list+cta+'</div>';
+    var prog='';for(var k=0;k<n;k++){prog+='<i'+(k<=cur?' class="on"':'')+'></i>';}
+    var yr=lang==='en'&&s.en_y?s.en_y:s.y;
+    var nextLabel=cur<n-1?(STOPS[cur+1][lang].n+' →'):L('Terminus','Terminus');
+    panel.innerHTML='<div class="in"><span class="yr">'+yr+'</span><h3>'+d.h+'</h3><p class="where">'+d.w+'</p></div>'+
+      '<div class="in"><p>'+d.p+'</p>'+list+cta+'</div>'+
+      '<div class="pnav"><button type="button" data-step="-1"'+(cur===0?' disabled':'')+'>← '+L('Précédent','Previous')+'</button>'+
+      '<span class="prog" aria-hidden="true">'+prog+'</span><span class="pcount">'+L('Arrêt','Stop')+' '+(cur+1)+' / '+n+'</span>'+
+      '<button type="button" class="go" data-step="1"'+(cur===n-1?' disabled':'')+'>'+nextLabel+'</button></div>';
   }
+  panel.addEventListener('click',function(e){var b=e.target.closest('[data-step]');if(b){go(cur+ +b.dataset.step);}});
+  window.addEventListener('resize',placeTrain);window.addEventListener('load',placeTrain);
 
   /* ---------- visionneuse ---------- */
-  var lb=document.getElementById('lb'),lbImg=document.getElementById('lb-img'),lbCap=document.getElementById('lb-cap');
+  var lb=document.getElementById('lb'),lbImg=document.getElementById('lb-img'),lbCap=document.getElementById('lb-cap'),
+      lbSub=document.getElementById('lb-sub'),lbVer=document.getElementById('lb-verify'),lbDots=document.getElementById('lb-dots'),vi=0;
+  function showView(i,swap){
+    vi=(i+ORDER.length)%ORDER.length;var v=VIEWS[ORDER[vi]];
+    lbImg.classList.remove('swap');if(swap){void lbImg.offsetWidth;lbImg.classList.add('swap');}
+    lbImg.src=v.src;lbImg.alt=v[lang];lbCap.textContent=v[lang];lbSub.textContent=v.sub[lang];
+    if(v.url){lbVer.href=v.url;lbVer.textContent=L('Vérifier en ligne','Verify online');lbVer.style.display='';}else{lbVer.style.display='none';}
+    lbDots.innerHTML=ORDER.map(function(_,k){return '<i'+(k===vi?' class="on"':'')+'></i>';}).join('');
+  }
   document.addEventListener('click',function(e){
-    var t=e.target.closest('[data-view]');
-    if(!t)return;
-    var v=VIEWS[t.dataset.view];if(!v)return;
-    lbImg.src=v.src;lbImg.alt=v[lang];lbCap.textContent=v[lang];
-    if(lb.showModal){lb.showModal();}else{window.open(v.src,'_blank');}
+    var t=e.target.closest('[data-view]');if(!t)return;
+    var k=ORDER.indexOf(t.dataset.view);if(k<0)return;
+    showView(k,false);
+    if(lb.showModal){lb.showModal();}else{window.open(VIEWS[ORDER[k]].src,'_blank');}
   });
   document.getElementById('lb-close').addEventListener('click',function(){lb.close();});
+  document.getElementById('lb-prev').addEventListener('click',function(){showView(vi-1,true);});
+  document.getElementById('lb-next').addEventListener('click',function(){showView(vi+1,true);});
   lb.addEventListener('click',function(e){if(e.target===lb)lb.close();});
+  document.addEventListener('keydown',function(e){
+    if(lb.open){if(e.key==='ArrowRight')showView(vi+1,true);if(e.key==='ArrowLeft')showView(vi-1,true);return;}
+    var tag=(document.activeElement&&document.activeElement.tagName)||'';
+    if(tag==='INPUT'||tag==='TEXTAREA')return;
+    var r=document.getElementById('parcours').getBoundingClientRect();
+    if(r.top<window.innerHeight*.6&&r.bottom>window.innerHeight*.3){
+      if(e.key==='ArrowRight'){go(cur+1);}
+      if(e.key==='ArrowLeft'){go(cur-1);}
+    }
+  });
 
   /* ---------- i18n ---------- */
   var nodes=[].slice.call(document.querySelectorAll('[data-en]'));
