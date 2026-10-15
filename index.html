@@ -363,7 +363,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <span class="clock" id="clock">--:--</span>
       </div>
       <div class="rows" id="rows"></div>
-      <div class="board-foot"><span data-en="Available immediately">Disponible immédiatement</span><span data-en="FR native, EN C1">FR natif, EN C1</span></div>
+      <div class="board-foot"><span data-en="Available immediately">Disponible immédiatement</span><span data-en="FR native, EN B2">FR natif, EN B2</span></div>
     </div>
   </div>
 </div>
@@ -477,7 +477,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <span class="state" data-en="New, BI &amp; business analysis">Nouveau, BI et Business Analysis</span>
         <h3 data-en="Swiss hotel tourism: end-to-end BI project">Tourisme hôtelier suisse : projet BI de bout en bout</h3>
         <p data-en="From business need to recommendations: requirements, KPI dictionary, star schema refreshed monthly from the Federal Statistical Office, Power BI report with DAX, UAT and an executive memo. Key finding: Geneva is at 120 % of its 2019 level.">Du besoin métier aux recommandations : cahier des charges, dictionnaire des KPI, modèle en étoile mis à jour chaque mois depuis l'OFS, rapport Power BI en DAX, recette et note à la direction. Constat clé : Genève est à 120 % de son niveau de 2019.</p>
-        <div class="stack"><span>Power BI</span><span>DAX</span><span>Power Query</span><span data-en="Star schema">Modèle en étoile</span><span data-en="Business analysis">Business Analysis</span></div>
+        <div class="stack"><span>Power BI</span><span>DAX</span><span>Power Query</span><span data-en="Star schema">Modèle en étoile</span><span data-en="Business analysis">Business Analysis</span><span>PBIP</span></div>
         <p style="display:flex;gap:16px;flex-wrap:wrap;flex:0"><a href="https://github.com/Toumil94/analyse-bi-suisse/blob/main/docs/05_recommandations.md" target="_blank" rel="noopener" data-en="Read the memo">Lire la note</a><a href="https://github.com/Toumil94/analyse-bi-suisse" target="_blank" rel="noopener" data-en="See the project">Voir le projet</a></p>
       </article>
       <article class="proj live">
@@ -543,7 +543,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <div class="skill"><h3>Cloud</h3><p>Databricks, Microsoft Azure, Azure Data Factory, Delta Lake, architecture Lakehouse, Snowflake</p></div>
       <div class="skill"><h3>BI &amp; Analytics</h3><p>Power BI, DAX, SAP BusinessObjects, Qlik, Tableau, Dataiku, Excel, conception de KPI</p></div>
       <div class="skill"><h3>Business Analysis</h3><p data-en="Requirements, functional specifications, UAT, stakeholders, change management, user training">Recueil des besoins, spécifications fonctionnelles, recette, parties prenantes, conduite du changement, formation</p></div>
-      <div class="skill"><h3 data-en="Languages">Langues</h3><p data-en="French (native), English (C1), Spanish (B1)">Français (natif), anglais (C1), espagnol (B1)</p></div>
+      <div class="skill"><h3 data-en="Languages">Langues</h3><p data-en="French (native), English (B2, TOEIC 840), Spanish (B1)">Français (natif), anglais (B2, TOEIC 840), espagnol (B1)</p></div>
     </div>
   </div>
 </section>
@@ -560,6 +560,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <li><button type="button" class="thumb" data-view="dbx-genai" aria-label="Voir l'accréditation"><img src="assets/certs/databricks-genai.jpg" alt="" loading="lazy"></button><b>Generative AI Fundamentals</b><span data-en="Databricks Academy, February 2026">Databricks Academy, février 2026</span><span class="acts"><button type="button" data-view="dbx-genai" data-en="View">Voir</button><a href="https://credentials.databricks.com" target="_blank" rel="noopener" data-en="Verify">Vérifier</a></span></li>
       <li><button type="button" class="thumb" data-view="dbx-agents" aria-label="Voir l'accréditation"><img src="assets/certs/databricks-agents.jpg" alt="" loading="lazy"></button><b>AI Agent Fundamentals</b><span data-en="Databricks Academy, February 2026">Databricks Academy, février 2026</span><span class="acts"><button type="button" data-view="dbx-agents" data-en="View">Voir</button><a href="https://credentials.databricks.com" target="_blank" rel="noopener" data-en="Verify">Vérifier</a></span></li>
       <li><button type="button" class="thumb" data-view="diplome" aria-label="Voir le diplôme"><img src="assets/certs/diplome-cesi.jpg" alt="" loading="lazy"></button><b data-en="CESI engineering degree, Master's level">Diplôme d'ingénieur CESI, grade de Master</b><span data-en="CESI, December 2025">CESI, décembre 2025</span><span class="acts"><button type="button" data-view="diplome" data-en="View">Voir</button></span></li>
+      <li><button type="button" class="thumb" data-view="toeic" aria-label="Voir le relevé TOEIC"><img src="assets/certs/toeic.jpg" alt="" loading="lazy"></button><b>TOEIC 840/990 (B2)</b><span data-en="ETS Global, April 2025">ETS Global, avril 2025</span><span class="acts"><button type="button" data-view="toeic" data-en="View">Voir</button></span></li>
       <li><span class="nothumb">CCNA</span><b>Cisco CCNA</b><span data-en="Cisco, networking">Cisco, réseau</span><span class="acts"></span></li>
       <li><span class="nothumb">DE</span><b>Data Engineer Associate</b><span>Databricks</span><span class="acts"><em data-en="In preparation">En préparation</em></span></li>
     </ul>
@@ -645,8 +646,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     'dbx-genai':{src:'assets/certs/databricks-genai.jpg',fr:'Generative AI Fundamentals',en:'Generative AI Fundamentals',sub:{fr:'Databricks Academy, février 2026',en:'Databricks Academy, February 2026'},url:'https://credentials.databricks.com'},
     'dbx-agents':{src:'assets/certs/databricks-agents.jpg',fr:'AI Agent Fundamentals',en:'AI Agent Fundamentals',sub:{fr:'Databricks Academy, février 2026',en:'Databricks Academy, February 2026'},url:'https://credentials.databricks.com'},
     'diplome':{src:'assets/certs/diplome-cesi.jpg',fr:'Diplôme d\'ingénieur CESI, grade de Master',en:'CESI engineering degree, Master\'s level',sub:{fr:'Délivré le 12 décembre 2025, titre habilité CTI',en:'Issued 12 December 2025, CTI-accredited'}}
+    ,'toeic':{src:'assets/certs/toeic.jpg',fr:'TOEIC 840/990 (niveau B2)',en:'TOEIC 840/990 (B2 level)',sub:{fr:'ETS Global, avril 2025 : compréhension orale 460, écrite 380',en:'ETS Global, April 2025: listening 460, reading 380'}}
   };
-  var ORDER=['diplome','azure','dbx-fund','dbx-genai','dbx-agents'];
+  var ORDER=['diplome','azure','dbx-fund','dbx-genai','dbx-agents','toeic'];
 
   /* ---------- panneau à palettes ---------- */
   var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
